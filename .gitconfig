@@ -1,0 +1,35 @@
+[user]
+	name = Jaroslaw Pendowski
+	email = jarek@pendowski.com
+
+[color]
+	ui = auto
+
+[core]
+	editor = pico
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	st = status
+	co = checkout
+	cia = commit -a
+	cp = cherry-pick
+	pod = !git checkout develop && git pull
+	rod = !git checkout develop && git pull && git checkout - && git rebase develop
+
+[push]
+	default = current
+ 	followTags = true
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[merge]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
