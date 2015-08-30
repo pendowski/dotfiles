@@ -16,6 +16,7 @@
 	cp = cherry-pick
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
+	today = !git log --pretty=oneline --author=`git config user.email` --since=am
 
 [push]
 	default = current
