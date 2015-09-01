@@ -14,9 +14,13 @@
 	co = checkout
 	cia = commit -a
 	cp = cherry-pick
+	ps = push
+	pl = pull
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
 	today = !git log --pretty=oneline --author=`git config user.email` --since=am
+	recent = !git reflog | grep 'checkout: moving from' | awk '{print $NF}' | head -n 25 | sort | uniq
+	recent-all = !git reflog | grep 'checkout: moving from' | awk '{print $NF}'
 
 [push]
 	default = current
