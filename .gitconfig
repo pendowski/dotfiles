@@ -1,5 +1,5 @@
 [user]
-	name = Jaroslaw Pendowski
+	name = Jarosław Pendowski
 	email = jarek@pendowski.com
 
 [color]
@@ -19,8 +19,11 @@
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
 	today = !git log --pretty=oneline --author=`git config user.email` --since=am
-	recent = !git reflog | grep 'checkout: moving from' | awk '{print $NF}' | head -n 25 | sort | uniq
-	recent-all = !git reflog | grep 'checkout: moving from' | awk '{print $NF}'
+	recent = !git recent-all | head -n 20 | uniq
+	recent-all = !git reflog | awk '/checkout: moving from /{ if (!seen[$NF]++) print $NF }'
+	reho = !git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
+	hist = !git log --oneline --all --color --graph --decorate
+	wip = !git cia -m "WIP"
 
 [push]
 	default = current
@@ -38,3 +41,9 @@
 	prompt = false
 [diff]
 	tool = Kaleidoscope
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
