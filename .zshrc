@@ -84,4 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias dns-clear="sudo killall -HUP mDNSResponder"
+alias home="echo \"Switching network to Automatic\" && networksetup -switchtolocation Automatic"
+alias work="echo \"Switching network to Work\" && networksetup -switchtolocation Work"
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
