@@ -89,3 +89,11 @@ alias home="echo \"Switching network to Automatic\" && networksetup -switchtoloc
 alias work="echo \"Switching network to Work\" && networksetup -switchtolocation Work"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+#---
+# Bindings
+#---
+
+# alt + left/right: jump one word backward/forward
+bindkey '^[^[[D' emacs-backward-word
+bindkey '^[^[[C' emacs-forward-word
