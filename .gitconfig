@@ -25,6 +25,7 @@
 	hist = !git log --oneline --all --color --graph --decorate
 	wip = !git cia -m "WIP"
 	junk = !sh -c "find -E . -regex '.*(\\.orig|\\.LOCAL|\\.BASE)$' | xargs rm"
+	cor = !git co $(git recent | fzf)
 
 [push]
 	default = current
