@@ -24,7 +24,7 @@
 	reho = !git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
 	hist = !git log --oneline --all --color --graph --decorate
 	wip = !git cia -m "WIP"
-	junk = !sh -c "find -E . -regex '.*(\\.orig|\\.LOCAL|\\.BASE)$' | xargs rm"
+	junk = !find -E . -regex '.*(\\.orig|\\.LOCAL|\\.BASE)$' | xargs rm
 	cor = !git co $(git recent | fzf)
 
 [push]
