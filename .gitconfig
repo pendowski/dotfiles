@@ -1,13 +1,13 @@
 [user]
-	name = Jarosław Pendowski
-	email = jarek@pendowski.com
+	name = Jaroslaw Pendowski
+	email = jarek@macoscope.net
 
 [color]
 	ui = auto
 
 [core]
 	editor = pico
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/shw/.gitignore_global
 
 [alias]
 	st = status
@@ -16,9 +16,11 @@
 	cp = cherry-pick
 	ps = push
 	pl = pull
+	cloner = clone --recursive
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
-	today = !git log --pretty=oneline --author=`git config user.email` --since=am
+	logs = !git log --pretty=oneline
+	today = !git logs --author=`git config user.email` --since=am
 	recent = !git recent-all | head -n 20 | uniq
 	recent-all = !git reflog | awk '/checkout: moving from /{ if (!seen[$NF]++) print $NF }'
 	reho = !git fetch && git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
