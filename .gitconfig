@@ -7,7 +7,7 @@
 
 [core]
 	editor = pico
-	excludesfile = /Users/shw/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [alias]
 	st = status
