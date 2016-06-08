@@ -21,6 +21,7 @@
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
 	logs = !git log --pretty=oneline
+	reword = !git ci --amend
 	today = !git logs --author=`git config user.email` --since=am
 	recent = !git recent-all | head -n 20 | uniq
 	recent-all = !git reflog | awk '/checkout: moving from /{ if (!seen[$NF]++) print $NF }'
