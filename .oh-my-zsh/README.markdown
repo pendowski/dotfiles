@@ -12,10 +12,10 @@ To learn more, visit http://ohmyz.sh and/or follow [ohmyzsh](https://twitter.com
 
 ### Prerequisites
 
-__Disclaimer:__ _Oh My Zsh works best on Mac OS X and Linux._
+__Disclaimer:__ _Oh My Zsh works best on OS X and Linux._
 
-* Unix-based operating system (Mac OS X or Linux)
-* [Zsh](http://www.zsh.org) should be installed (v4.3.9 or more recent). If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing-ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+* Unix-based operating system (OS X or Linux)
+* [Zsh](http://www.zsh.org) should be installed (v4.3.9 or more recent). If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 * `curl` or `wget` should be installed
 * `git` should be installed
 
@@ -25,11 +25,15 @@ Oh My Zsh is installed by running one of the following commands in your terminal
 
 #### via curl
 
-`sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
 #### via wget
 
-`sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
+```shell
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 
 ## Using Oh My Zsh
 
@@ -65,7 +69,7 @@ Once you find a theme that you want to use, you will need to edit the `~/.zshrc`
 ZSH_THEME="robbyrussell"
 ```
 
-To use a different theme, simple change the value to match the name of your desired theme. For example:
+To use a different theme, simply change the value to match the name of your desired theme. For example:
 
 ```shell
 ZSH_THEME="agnoster" # (this is one of the fancy ones)
@@ -76,6 +80,14 @@ Open up a new terminal window and your prompt should look something like...
 ![Agnoster theme](https://cloud.githubusercontent.com/assets/2618447/6316862/70f58fb6-ba03-11e4-82c9-c083bf9a6574.png)
 
 In case you did not find a suitable theme for your needs, please have a look at the wiki for [more of them](https://github.com/robbyrussell/oh-my-zsh/wiki/External-themes).
+
+If you're feeling feisty, you can let the computer select one randomly for you each time you open a new terminal window.
+
+
+```shell
+ZSH_THEME="random" # (...please let it be pie... please be some pie..)
+```
+
 
 ## Advanced Topics
 
@@ -92,7 +104,7 @@ The default location is `~/.oh-my-zsh` (hidden in your home directory)
 If you'd like to change the install directory with the `ZSH` environment variable, either by running `export ZSH=/your/path` before installing, or by setting it before the end of the install pipeline like this:
 
 ```shell
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | ZSH=~/.dotfiles/zsh sh
+export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 #### Manual Installation

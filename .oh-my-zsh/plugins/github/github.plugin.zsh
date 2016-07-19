@@ -91,7 +91,14 @@ exist_gh() { # [DIRECTORY]
 # source: https://github.com/nvogel/dotzsh
 # documentation: https://github.com/blog/985-git-io-github-url-shortener
 #
+<<<<<<< 1b1315a777328095cd8b5f364fd4345eeae7c4bf
+git.io() {
+  emulate -L zsh
+  curl -i -s https://git.io -F "url=$1" | grep "Location" | cut -f 2 -d " "
+}
+=======
 git.io() {curl -i -s http://git.io -F "url=$1" | grep "Location" | cut -f 2 -d " "}
+>>>>>>> Some my changes - update fix
 
 # End Functions #############################################################
 
