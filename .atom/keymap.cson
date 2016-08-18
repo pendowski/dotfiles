@@ -38,3 +38,4 @@
 'atom-text-editor':
   'alt-up': 'editor:move-line-up'
   'alt-down': 'editor:move-line-down'
+  'cmd-alt-down': 'editor:duplicate-lines'
