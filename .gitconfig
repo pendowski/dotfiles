@@ -1,6 +1,6 @@
 [user]
 	name = Jaroslaw Pendowski
-	email = jarek@macoscope.net
+	email = jarek@pendowski.com
 
 [color]
 	ui = auto
@@ -16,6 +16,7 @@
 	cia = commit -a
 	cp = cherry-pick
 	ps = push
+	psa = !git remote | xargs -L1 git push --all
 	pl = pull
 	cloner = clone --recursive
 	pod = !git checkout develop && git pull
