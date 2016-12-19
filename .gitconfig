@@ -1,6 +1,7 @@
 [user]
-	name = Jaroslaw Pendowski
+	name = Jarek Pendowski
 	email = jarek@pendowski.com
+	signingkey = C32BE2AD
 
 [color]
 	ui = auto
@@ -54,3 +55,6 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	gpgsign = true
+	template = ~/.stCommitMsg

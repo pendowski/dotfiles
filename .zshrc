@@ -50,14 +50,15 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git common-aliases last-working-dir npm osx sudo web-search battery bgnotify zsh_reload wd xcode oneletter)
+plugins=(git common-aliases last-working-dir npm osx sudo web-search battery bgnotify zsh_reload wd xcode oneletter rbenv)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/deployd/bin:/opt/ImageMagick/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/deployd/bin:/opt/ImageMagick/bin:/usr/local/gcc_arm/gcc-arm-none-eabi-5_4-2016q2/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+source ~/.bash_profile
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
