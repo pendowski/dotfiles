@@ -31,6 +31,7 @@
 	wip = !git cia -m "WIP"
 	junk = !find -E . -regex '.*(\\.orig|\\.LOCAL|\\.BASE)$' | xargs rm
 	cor = !git co $(git recent | fzf)
+	corr = !git co $(git branch -a | fzf)
 
 [push]
 	default = current
@@ -54,3 +55,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
