@@ -1,6 +1,7 @@
 [user]
-	name = Jaroslaw Pendowski
+	name = Jarek Pendowski
 	email = jarek@pendowski.com
+	signingkey = C32BE2AD
 
 [color]
 	ui = auto
@@ -59,3 +60,6 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+[commit]
+	gpgsign = true
+	template = ~/.stCommitMsg
