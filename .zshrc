@@ -1,11 +1,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export TERM='xterm-256color'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="honukai"
+ZSH_THEME="bullet-train" #"honukai"
+
+BULLETTRAIN_PROMPT_CHAR="🤖 "
+BULLETTRAIN_CONTEXT_BG=001
+BULLETTRAIN_CONTEXT_FG=015
+BULLETTRAIN_PROMPT_ORDER=(context time dir git status cmd_exec_time custom)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
