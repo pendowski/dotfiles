@@ -50,7 +50,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git common-aliases last-working-dir npm osx sudo web-search battery bgnotify zsh_reload wd xcode oneletter rbenv)
+plugins=(git common-aliases last-working-dir npm osx sudo battery bgnotify zsh_reload wd xcode oneletter rbenv)
 
 # User configuration
 
