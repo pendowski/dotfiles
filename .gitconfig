@@ -20,6 +20,7 @@
 	psa = !git remote | xargs -L1 git push --all
 	pl = pull
 	cloner = clone --recursive
+	cod = !git checkout develop
 	pod = !git checkout develop && git pull
 	rod = !git checkout develop && git pull && git checkout - && git rebase develop
 	logs = !git log --pretty=oneline
