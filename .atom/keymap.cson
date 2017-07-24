@@ -32,7 +32,7 @@
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 
 '.platform-darwin atom-text-editor':
-  'cmd-d': 'unset!'
+#  'cmd-d': 'unset!'
   'cmd-d': 'editor:delete-line'
 
 'atom-text-editor':
