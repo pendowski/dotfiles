@@ -8,7 +8,7 @@
 
 [core]
 	editor = pico
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/shw/.gitignore_global
 
 [alias]
 	st = status
@@ -34,6 +34,8 @@
 	junk = !find -E . -regex '.*(\\.orig|\\.LOCAL|\\.BASE)$' -print0 | xargs -0 rm
 	cor = !git co $(git recent | fzf)
 	corr = !git co $(git branch -a | fzf)
+	change = "!f() { git diff \"$1^\" \"$1\"; }; f"
+	pr = "!f() { open "https://github.com/$(git remote get-url origin | tr ':' '\n' | tail -n 1 | tr '.git' '\n' | head -n 1)/pull/$(git rev-parse --abbrev-ref HEAD | tr '/' '\n' | tail -n 1)"; }; f" # https://gist.github.com/piscisaureus/3342247
 
 [push]
 	default = current
@@ -53,7 +55,7 @@
 	tool = Kaleidoscope
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -63,4 +65,5 @@
 	required = true
 [commit]
 	gpgsign = true
+	template = /Users/shw/.stCommitMsg
 #	template = ~/.stCommitMsg
