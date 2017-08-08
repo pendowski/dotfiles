@@ -36,6 +36,7 @@
 	corr = !git co $(git branch -a | fzf)
 	change = "!f() { git diff \"$1^\" \"$1\"; }; f"
 	pr = "!f() { open "https://github.com/$(git remote get-url origin | tr ':' '\n' | tail -n 1 | tr '.git' '\n' | head -n 1)/pull/$(git rev-parse --abbrev-ref HEAD | tr '/' '\n' | tail -n 1)"; }; f" # https://gist.github.com/piscisaureus/3342247
+  backup = "!f() { mkdir -p "git-backups" &> /dev/null && curl -o "git-backups/$(git rev-parse --abbrev-ref HEAD | sed 's/\\//__/')-$(date +%Y-%m-%d_%H-%M).zip" "https://github.com/$(git remote get-url origin | tr ':' '\n' | tail -n 1 | sed 's/.git//')/archive/$(git rev-parse --abbrev-ref HEAD).zip"; }; f"
 
 [push]
 	default = current
