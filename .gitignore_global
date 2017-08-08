@@ -33,3 +33,6 @@ Temporary Items
 #*_LOCAL_*
 #*_REMOTE_*
 #*.orig
+
+# Custom files/directories
+*git-backups*
