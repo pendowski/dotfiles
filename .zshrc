@@ -6,12 +6,12 @@ export TERM='xterm-256color'
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="bullet-train" #"honukai"
+ZSH_THEME="" #"bullet-train" #"honukai"
 
-BULLETTRAIN_PROMPT_CHAR="🤖 "
-BULLETTRAIN_CONTEXT_BG=001
-BULLETTRAIN_CONTEXT_FG=015
-BULLETTRAIN_PROMPT_ORDER=(context time dir git status cmd_exec_time custom)
+#BULLETTRAIN_PROMPT_CHAR="🤖 "
+#BULLETTRAIN_CONTEXT_BG=001
+#BULLETTRAIN_CONTEXT_FG=015
+#BULLETTRAIN_PROMPT_ORDER=(context time dir git status cmd_exec_time custom)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,7 +56,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git common-aliases last-working-dir npm osx sudo battery bgnotify zsh_reload wd xcode oneletter rbenv)
+plugins=(git common-aliases last-working-dir npm osx sudo wd oneletter)
 
 # User configuration
 
@@ -66,8 +66,13 @@ export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/us
 source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile
 
+# Install Pure `npm i --global pure-prompt`
+autoload -U promptinit; promptinit
+prompt pure
+
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -109,3 +114,5 @@ bindkey '^[^[[C' emacs-forward-word
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin

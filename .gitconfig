@@ -17,7 +17,7 @@
 	cia = commit -a
 	cp = cherry-pick
 	ps = push
-	psa = !git remote | xargs -L1 git push --all
+	psa = !git remote | xargs -L1 git push
 	pl = pull
 	cloner = clone --recursive
 	cod = !git checkout develop
@@ -36,6 +36,8 @@
 	corr = !git co $(git branch -a | fzf)
 	change = "!f() { git diff \"$1^\" \"$1\"; }; f"
 	pr = "!f() { open "https://github.com/$(git remote get-url origin | tr ':' '\n' | tail -n 1 | tr '.git' '\n' | head -n 1)/pull/$(git rev-parse --abbrev-ref HEAD | tr '/' '\n' | tail -n 1)"; }; f" # https://gist.github.com/piscisaureus/3342247
+  prstat = "!f() { git diff --stat $(git log develop..$(git rev-parse --abbrev-ref HEAD) --oneline | tail -1 | tr ' ' '\n' | head -1); }; f"
+  prstats = !git prstat | tail -1
   ghdl = "!f() { mkdir -p "git-backups" &> /dev/null && curl -o "git-backups/$(git rev-parse --abbrev-ref HEAD | sed 's/\\//__/')-$(date +%Y-%m-%d_%H-%M).zip" "https://github.com/$(git remote get-url origin | tr ':' '\n' | tail -n 1 | sed 's/.git//')/archive/$(git rev-parse --abbrev-ref HEAD).zip"; }; f"
 	backup = "!f() { if [ -d ".git" ]; then zippath="git-backups/$(git rev-parse --abbrev-ref HEAD | sed 's/\\//__/')-$(date +%Y-%m-%d_%H-%M-%S).zip"; mkdir -p "git-backups" &> /dev/null && zip -q -r "$zippath" . -x "*.git*" -x "*git-backups*" -x "*.DS_Store" && echo "Created backup: $zippath"; else echo "You should be in repo root directory"; fi }; f"
 
@@ -69,3 +71,4 @@
 	gpgsign = true
 	template = /Users/shw/.stCommitMsg
 #	template = ~/.stCommitMsg
+	

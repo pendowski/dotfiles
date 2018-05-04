@@ -37,6 +37,15 @@ function xb() {
 	x "beta"
 }
 
+function zzz() {
+	echo "Going to sleep..." && pmset displaysleepnow
+}
+
+function ss() {
+	/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &> /dev/null
+	/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine &> /dev/null
+}
+
 function afk() {
 	/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend && sleep 4 && pmset displaysleepnow
 }
@@ -50,6 +59,10 @@ function xcode_open() {
 	
 	echo "Opening $project"
 	open -a $xcode $project
+}
+
+function vsc() {
+/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code $1
 }
 
 # open selected/current directory in Finder
